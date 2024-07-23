@@ -101,6 +101,10 @@ Atau jalankan perintah berikut untuk setup database beserta data _dummy_
 ```
 make setup-dummy
 ```
+untuk link storage
+```
+php artisan storage:link
+```
 Terakhir, jalankan perintah berikut untuk menjalankan web app
 ```
 make run
