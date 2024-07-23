@@ -17,6 +17,14 @@ class LetterGalleryController extends Controller
         ]);
     }
 
+    public function backtrack(Request $request): View
+    {
+        return view('pages.gallery.backtrack', [
+            'data' => Attachment::backtrack()->render($request->search),
+            'search' => $request->search,
+        ]);
+    }
+
     public function outgoing(Request $request): View
     {
         return view('pages.gallery.outgoing', [

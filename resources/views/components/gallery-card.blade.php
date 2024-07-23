@@ -6,6 +6,8 @@
                 <small>
                     @if($letter->type == 'incoming')
                         <a href="{{ route('transaction.incoming.show', $letter) }}" class="fw-bold">{{ $letter->reference_number }}</a>
+                    @elseif($letter->type == 'backtrack')
+                        <a href="{{ route('transaction.backtrack.show', $letter) }}" class="fw-bold">{{ $letter->reference_number }}</a>
                     @else
                         <a href="{{ route('transaction.outgoing.show', $letter) }}" class="fw-bold">{{ $letter->reference_number }}</a>
                     @endif

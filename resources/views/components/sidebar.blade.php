@@ -27,7 +27,7 @@
         <li class="menu-item {{ \Illuminate\Support\Facades\Route::is('transaction.*') ? 'active open' : '' }}">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-mail-send"></i>
-                <div data-i18n="{{ __('menu.transaction.menu') }}">{{ __('menu.transaction.menu') }}</div>
+                <div data-i18n="{{ __('menu.transaction.menu') }}">Surat</div>
             </a>
             <ul class="menu-sub">
                 <li class="menu-item {{ \Illuminate\Support\Facades\Route::is('transaction.incoming.*') || \Illuminate\Support\Facades\Route::is('transaction.disposition.*') ? 'active' : '' }}">
@@ -42,6 +42,12 @@
                             data-i18n="{{ __('menu.transaction.outgoing_letter') }}">{{ __('menu.transaction.outgoing_letter') }}</div>
                     </a>
                 </li>
+                {{-- <li class="menu-item {{ \Illuminate\Support\Facades\Route::is('transaction.backtrack.*') ? 'active' : '' }}">
+                    <a href="{{ route('transaction.backtrack.index') }}" class="menu-link">
+                        <div
+                            data-i18n="{{ __('menu.transaction.backtrack_letter') }}">{{ __('menu.transaction.backtrack_letter') }}</div>
+                    </a>
+                </li> --}}
             </ul>
         </li>
         <li class="menu-item {{ \Illuminate\Support\Facades\Route::is('agenda.*') ? 'active open' : '' }}">
@@ -65,7 +71,7 @@
             </ul>
         </li>
 
-        <li class="menu-header small text-uppercase">
+        {{-- <li class="menu-header small text-uppercase">
             <span class="menu-header-text">{{ __('menu.header.other_menu') }}</span>
         </li>
         <li class="menu-item {{ \Illuminate\Support\Facades\Route::is('gallery.*') ? 'active open' : '' }}">
@@ -87,7 +93,7 @@
                     </a>
                 </li>
             </ul>
-        </li>
+        </li> --}}
         @if(auth()->user()->role == 'admin')
             <li class="menu-item {{ \Illuminate\Support\Facades\Route::is('reference.*') ? 'active open' : '' }}">
                 <a href="javascript:void(0);" class="menu-link menu-toggle">

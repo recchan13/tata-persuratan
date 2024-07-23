@@ -49,9 +49,9 @@
                     </div>
                     <div class="col-sm-5 text-center text-sm-left">
                         <div class="card-body pb-0 px-0 px-md-4">
-                            <img src="{{asset('sneat/img/man-with-laptop-light.png')}}" height="140"
-                                 alt="View Badge User" data-app-dark-img="illustrations/man-with-laptop-dark.png"
-                                 data-app-light-img="illustrations/man-with-laptop-light.png">
+                            <img src="{{asset('sneat/img/work-with-laptop.png')}}" height="140"
+                                 alt="View Badge User" data-app-dark-img="illustrations/work-with-laptop.png"
+                                 data-app-light-img="illustrations/work-with-laptop.png">
                         </div>
                     </div>
                 </div>

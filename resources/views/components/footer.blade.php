@@ -5,8 +5,8 @@
             <script>
                 document.write(new Date().getFullYear());
             </script>
-            , {{ __('footer.made_by') }}
-            <a href="https://github.com/404NotFoundIndonesia" target="_blank" class="footer-link fw-bolder">404 Not Found Indonesia</a>
+            {{-- , {{ __('footer.made_by') }} --}}
+            <a href="https://ptipd.radenintan.ac.id/" target="_blank" class="footer-link fw-bolder">PTIPD UIN RIL</a>
         </div>
     </div>
 </footer>

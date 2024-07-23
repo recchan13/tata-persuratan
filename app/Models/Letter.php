@@ -72,6 +72,10 @@ class Letter extends Model
     {
         return $this->scopeType($query, LetterType::INCOMING);
     }
+    public function scopeBacktrack($query)
+    {
+        return $this->scopeType($query, LetterType::BACKTRACK);
+    }
 
     public function scopeOutgoing($query)
     {
