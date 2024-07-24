@@ -77,6 +77,7 @@ class Letter extends Model
     {
         return $this->scopeType($query, LetterType::INCOMING);
     }
+    
     public function scopeBacktrack($query)
     {
         return $this->scopeType($query, LetterType::BACKTRACK);
@@ -143,6 +144,13 @@ class Letter extends Model
     {
         return $this->belongsTo(Classification::class, 'classification_code', 'code');
     }
+
+    //  @return BelongsTo
+    // public function disposition(): BelongsTo
+    // {
+    //     return $this->belongsTo(Disposition::class, 'disposition_user', 'code');
+    // }
+
 
     /**
      * @return HasMany

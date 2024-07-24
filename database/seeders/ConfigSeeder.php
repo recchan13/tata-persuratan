@@ -22,27 +22,27 @@ class ConfigSeeder extends Seeder
             ],
             [
                 'code' => 'page_size',
-                'value' => '5',
+                'value' => '15',
             ],
             [
                 'code' => 'app_name',
-                'value' => 'Aplikasi Surat Menyurat',
+                'value' => 'Aplikasi Tata Persuratan',
             ],
             [
                 'code' => 'institution_name',
-                'value' => '404nfid',
+                'value' => 'UIN Raden Intan Lampung',
             ],
             [
                 'code' => 'institution_address',
-                'value' => 'Jl. Padat Karya',
+                'value' => 'Jl. Endro Suratmin',
             ],
             [
                 'code' => 'institution_phone',
-                'value' => '082121212121',
+                'value' => '081367631999',
             ],
             [
                 'code' => 'institution_email',
-                'value' => 'admin@admin.com',
+                'value' => 'umum@radenintan.ac.id',
             ],
             [
                 'code' => 'language',
@@ -50,7 +50,7 @@ class ConfigSeeder extends Seeder
             ],
             [
                 'code' => 'pic',
-                'value' => 'M. Iqbal Effendi',
+                'value' => 'Reza Octaviany',
             ],
         ]);
     }

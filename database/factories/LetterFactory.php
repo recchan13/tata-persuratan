@@ -28,7 +28,7 @@ class LetterFactory extends Factory
             'description' => $this->faker->sentence(7),
             'note' => $this->faker->sentence(3),
             'type' => $this->faker->randomElement([LetterType::INCOMING->type(), LetterType::OUTGOING->type()]),
-            'classification_code' => 'ADM',
+            'classification_code' => 'KU.00.1.1',
             'user_id' => 1,
         ];
     }

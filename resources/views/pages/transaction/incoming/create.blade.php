@@ -23,6 +23,21 @@
                 <div class="col-sm-12 col-12 col-md-6 col-lg-4">
                     <x-input-form name="agenda_number" :label="__('model.letter.agenda_number')"/>
                 </div>
+
+                <div class="col-sm-12 col-12 col-md-12 col-lg-12">
+                    <label for="disposition_user"
+                    class="form-label">PENERIMA DISPOSISI</label>
+                    <select class="form-select" id="disposition_user" name="disposition_user">
+                        @foreach($users as $user)
+                            <option
+                                value="{{ $user->id }}"
+                                @selected(old('disposition_user') == $user->id)>
+                                {{ $user->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+
                 <div class="col-sm-12 col-12 col-md-6 col-lg-6">
                     <x-input-form name="letter_date" :label="__('model.letter.letter_date')" type="date"/>
                 </div>
@@ -41,7 +56,7 @@
                                 <option
                                     value="{{ $classification->code }}"
                                     @selected(old('classification_code') == $classification->code)>
-                                    {{ $classification->type }}
+                                    {{ $classification->code }} - {{ $classification->type }}
                                 </option>
                             @endforeach
                         </select>
@@ -58,17 +73,9 @@
                         <span class="error invalid-feedback">{{ $errors->first('attachments') }}</span>
                     </div>
                 </div>
+                
             </div>
-            <div class="col-sm-12 col-12 col-md-12 col-lg-12">
-                <select class="form-select" id="disposition_user" name="disposition_user">
-                    @foreach($users as $user)
-                        <option
-                            value="{{ $user->id }}"
-                            @selected(old('disposition_user') == $user->id)>{{ $user->name }}</option>
-                    @endforeach
-                </select>
-
-            </div>
+            
             <div class="card-footer pt-0">
                 <button class="btn btn-primary" type="submit">{{ __('menu.general.save') }}</button>
             </div>
