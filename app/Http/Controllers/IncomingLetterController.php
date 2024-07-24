@@ -10,6 +10,7 @@ use App\Models\Attachment;
 use App\Models\Classification;
 use App\Models\Config;
 use App\Models\Letter;
+use App\Models\User;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
@@ -85,6 +86,7 @@ class IncomingLetterController extends Controller
     {
         return view('pages.transaction.incoming.create', [
             'classifications' => Classification::all(),
+            'users'=> User::all(),
         ]);
     }
 

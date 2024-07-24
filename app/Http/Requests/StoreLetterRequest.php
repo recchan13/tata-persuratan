@@ -30,6 +30,7 @@ class StoreLetterRequest extends FormRequest
             'description' => __('model.letter.description'),
             'note' => __('model.letter.note'),
             'classification_code' => __('model.letter.classification_code'),
+            'disposition_user_id' => __('model.letter.disposition_user_id'),
         ];
     }
 
@@ -51,6 +52,7 @@ class StoreLetterRequest extends FormRequest
             'description' => ['required'],
             'note' => ['nullable'],
             'classification_code' => ['required'],
+            'disposition_user_id' => ['required'],
         ];
     }
 }

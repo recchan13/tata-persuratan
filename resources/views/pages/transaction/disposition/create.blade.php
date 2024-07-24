@@ -39,9 +39,6 @@
                     <x-input-form name="note" :label="__('model.disposition.note')"/>
                 </div>
             </div>
-            <div class="card-footer pt-0">
-                <button class="btn btn-primary" type="submit">{{ __('menu.general.save') }}</button>
-            </div>
 
             <div class="col-sm-12 col-12 col-md-12 col-lg-12">
                 <select class="form-select" id="disposition_user" name="disposition_user">
@@ -53,6 +50,12 @@
                 </select>
 
             </div>
+
+            <div class="card-footer pt-0">
+                <button class="btn btn-primary" type="submit">{{ __('menu.general.save') }}</button>
+            </div>
+
+
         </form>
     </div>
 @endsection
