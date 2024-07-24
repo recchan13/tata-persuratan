@@ -104,8 +104,7 @@ class IncomingLetterController extends Controller
             if ($request->type != LetterType::INCOMING->type()) throw new \Exception(__('menu.transaction.incoming_letter'));
             $newLetter = $request->validated();
             $newLetter['user_id'] = $user->id;
-            dd($newLetter);
-            
+
             $letter = Letter::create($newLetter);
             if ($request->hasFile('attachments')) {
                 foreach ($request->attachments as $attachment) {
