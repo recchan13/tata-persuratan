@@ -63,6 +63,10 @@ class Letter extends Model
         return $this->updated_at->isoFormat('dddd, D MMMM YYYY, HH:mm:ss');
     }
 
+    public function scopeUser($query, $user_id) {
+        return $query->where('user_id', $user_id);
+    }
+    
     public function scopeType($query, LetterType $type)
     {
         return $query->where('type', $type->type());

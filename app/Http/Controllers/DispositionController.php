@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateDispositionRequest;
 use App\Models\Disposition;
 use App\Models\Letter;
 use App\Models\LetterStatus;
+use App\Models\User;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -38,6 +39,7 @@ class DispositionController extends Controller
     public function create(Letter $letter): View
     {
         return view('pages.transaction.disposition.create', [
+            'users' => User::all(),
             'letter' => $letter,
             'statuses' => LetterStatus::all(),
         ]);

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Enums\LetterType;
+use App\Enums\Role;
 use App\Http\Requests\StoreLetterRequest;
 use App\Http\Requests\UpdateLetterRequest;
 use App\Models\Attachment;
@@ -25,8 +26,14 @@ class IncomingLetterController extends Controller
      */
     public function index(Request $request): View
     {
+        $data = Letter::incoming();
+
+        if (auth()->user()->role == Role::STAFF->status()) {
+            $data->user(auth()->user()->id);
+        }
+
         return view('pages.transaction.incoming.index', [
-            'data' => Letter::incoming()->render($request->search),
+            'data' => $data->render($request->search),
             'search' => $request->search,
         ]);
     }

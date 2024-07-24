@@ -42,6 +42,17 @@
             <div class="card-footer pt-0">
                 <button class="btn btn-primary" type="submit">{{ __('menu.general.save') }}</button>
             </div>
+
+            <div class="col-sm-12 col-12 col-md-12 col-lg-12">
+                <select class="form-select" id="disposition_user" name="disposition_user">
+                    @foreach($users as $user)
+                        <option
+                            value="{{ $user->id }}"
+                            @selected(old('disposition_user') == $user->id)>{{ $user->name }}</option>
+                    @endforeach
+                </select>
+
+            </div>
         </form>
     </div>
 @endsection
