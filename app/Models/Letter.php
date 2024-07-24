@@ -30,6 +30,7 @@ class Letter extends Model
         'type',
         'classification_code',
         'user_id',
+        'disposition_user_id',
     ];
 
     /**
@@ -66,7 +67,7 @@ class Letter extends Model
     public function scopeUser($query, $user_id) {
         return $query->where('user_id', $user_id);
     }
-    
+
     public function scopeType($query, LetterType $type)
     {
         return $query->where('type', $type->type());
