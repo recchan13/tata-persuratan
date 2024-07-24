@@ -41,7 +41,7 @@
             </div>
 
             <div class="col-sm-12 col-12 col-md-12 col-lg-12">
-                <select class="form-select" id="disposition_user" name="disposition_user">
+                <select class="form-select" id="disposition_user_id" name="disposition_user_id">
                     @foreach($users as $user)
                         <option
                             value="{{ $user->id }}"
