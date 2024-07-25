@@ -153,6 +153,7 @@ class IncomingLetterController extends Controller
         return view('pages.transaction.incoming.edit', [
             'data' => $incoming,
             'classifications' => Classification::all(),
+            'users'=> User::all(),
         ]);
     }
 

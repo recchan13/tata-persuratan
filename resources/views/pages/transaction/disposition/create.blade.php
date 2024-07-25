@@ -5,6 +5,10 @@
         :values="[__('menu.transaction.menu'), $letter->reference_number, __('menu.transaction.disposition_letter'), __('menu.general.create')]">
     </x-breadcrumb>
 
+    @if($errors->any())
+        {{ implode('', $errors->all('<div>:message</div>')) }}
+    @endif
+
     <div class="alert alert-primary alert-dismissible" role="alert">
         {{ __('model.disposition.notice_me', ['reference_number' => $letter->reference_number]) }} <a href="{{ route('transaction.incoming.show', $letter) }}" class="fw-bold">{{ __('menu.general.view') }}</a>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -17,6 +21,17 @@
                 <div class="col-sm-12 col-12 col-md-6 col-lg-6">
                     <x-input-form name="to" :label="__('model.disposition.to')"/>
                 </div>
+{{--                 
+                <div class="col-sm-12 col-12 col-md-6 col-lg-6">
+                    <label for="to" class="form-label">{{ __('model.disposition.to') }}</label>
+                    <select class="form-select" id="disposition_user_id" name="disposition_user_id">
+                        @foreach($users as $user)
+                            <option
+                                value="{{ $user->name }}"
+                                @selected(old('disposition_user') == $user->name)>{{ $user->name }}</option>
+                        @endforeach
+                    </select>
+                </div> --}}
                 <div class="col-sm-12 col-12 col-md-6 col-lg-6">
                     <x-input-form name="due_date" :label="__('model.disposition.due_date')" type="date"/>
                 </div>

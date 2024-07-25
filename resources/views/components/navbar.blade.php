@@ -50,7 +50,7 @@
                                 </div>
                                 <div class="flex-grow-1">
                                     <span class="fw-semibold d-block">{{ auth()->user()->name }}</span>
-                                    <small class="text-muted text-capitalize">{{ auth()->user()->role }}</small>
+                                    <small class="text-muted text-capitalize">{{ auth()->user()->email }}</small>
                                 </div>
                             </div>
                         </a>

@@ -4,7 +4,7 @@
     <x-breadcrumb
         :values="[__('menu.transaction.menu'), __('menu.transaction.incoming_letter'), __('menu.general.view')]">
     </x-breadcrumb>
-
+    
     <x-letter-card :letter="$data">
         <div class="mt-2">
             <div class="divider">
