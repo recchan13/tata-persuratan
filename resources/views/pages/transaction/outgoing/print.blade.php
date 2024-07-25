@@ -62,21 +62,21 @@
     <tr>
         <th>{{ __('model.letter.agenda_number') }}</th>
         <th>{{ __('model.letter.reference_number') }}</th>
-        <th>{{ __('model.letter.to') }}</th>
+        <th>{{ __('model.letter.from') }}</th>
         <th>{{ __('model.letter.letter_date') }}</th>
         <th>{{ __('model.letter.description') }}</th>
-        <th>{{ __('model.letter.note') }}</th>
+        {{-- <th>{{ __('model.letter.note') }}</th> --}}
     </tr>
     </thead>
     <tbody>
     @foreach($data as $letter)
         <tr>
             <td>{{ $letter->agenda_number }}</td>
-            <td>{{ $letter->reference_number }}</td>
+            <td>{{ $letter->reference_number }}/Un.16/{{ $letter->signer?->code }}/{{ $letter->classification?->code }}/{{ $letter->letter_date->format('m') }}/{{ $letter->letter_date->format('Y') }}</td>
             <td>{{ $letter->to }}</td>
             <td>{{ $letter->formatted_letter_date }}</td>
             <td>{{ $letter->description }}</td>
-            <td>{{ $letter->note }}</td>
+            {{-- <td>{{ $letter->note }}</td> --}}
         </tr>
     @endforeach
     </tbody>

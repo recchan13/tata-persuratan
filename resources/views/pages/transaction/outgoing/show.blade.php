@@ -33,6 +33,9 @@
                 <dt class="col-sm-3">{{ __('model.letter.to') }}</dt>
                 <dd class="col-sm-9">{{ $data->to }}</dd>
 
+                <dt class="col-sm-3">{{ __('model.letter.signer') }}</dt>
+                <dd class="col-sm-9">{{ $data->signer?->name }}</dd>
+
                 <dt class="col-sm-3">{{ __('model.general.created_by') }}</dt>
                 <dd class="col-sm-9">{{ $data->user?->name }}</dd>
 

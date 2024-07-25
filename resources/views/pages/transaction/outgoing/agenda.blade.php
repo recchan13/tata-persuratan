@@ -70,7 +70,7 @@
                             <td>
                                 <a href="{{ route('transaction.outgoing.show', $agenda) }}">{{ $agenda->reference_number }}</a>
                             </td>
-                            <td>{{ $agenda->from }}</td>
+                            <td>{{ $agenda->to }}</td>
                             <td>{{ $agenda->formatted_letter_date }}</td>
                         </tr>
                     @endforeach
