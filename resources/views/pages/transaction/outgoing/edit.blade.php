@@ -5,6 +5,10 @@
         :values="[__('menu.transaction.menu'), __('menu.transaction.outgoing_letter'), __('menu.general.edit')]">
     </x-breadcrumb>
 
+    @if($errors->any())
+        {{ implode('', $errors->all('<div>:message</div>')) }}
+    @endif
+
     <div class="card mb-4">
         <form action="{{ route('transaction.outgoing.update', $data) }}" method="POST" enctype="multipart/form-data">
             @csrf
@@ -17,8 +21,20 @@
                                   :label="__('model.letter.reference_number')"/>
                 </div>
                 <div class="col-sm-12 col-12 col-md-6 col-lg-4">
-                    <x-input-form :value="$data->to" name="to" :label="__('model.letter.to')"/>
+                    <label for="from"
+                            class="form-label">{{ __('model.letter.to') }}</label>
+                    <select class="form-select" id="to" name="to">
+                        @foreach($users as $user)
+                            <option
+                                @selected(old('to', $data->to) == $user->id)
+                                value="{{ $user->id }}"
+                            >{{ $user->name }}</option>
+                        @endforeach
+                    </select>
                 </div>
+                {{-- <div class="col-sm-12 col-12 col-md-6 col-lg-4">
+                    <x-input-form :value="$data->to" name="to" :label="__('model.letter.to')"/>
+                </div> --}}
                 <div class="col-sm-12 col-12 col-md-6 col-lg-4">
                     <x-input-form :value="$data->agenda_number" name="agenda_number"
                                   :label="__('model.letter.agenda_number')"/>
@@ -40,7 +56,7 @@
                                 <option
                                     @selected(old('classification_code', $data->classification_code) == $classification->code)
                                     value="{{ $classification->code }}"
-                                >{{ $classification->type }}</option>
+                                >{{ $classification->code }} - {{ $classification->type }}</option>
                             @endforeach
                         </select>
                     </div>
