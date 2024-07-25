@@ -10,7 +10,10 @@
         {{ __('model.disposition.notice_me', ['reference_number' => $letter->reference_number]) }} <a href="{{ route('transaction.incoming.show', $letter) }}" class="fw-bold">{{ __('menu.general.view') }}</a>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
-
+    {{-- <div class="alert alert-primary alert-dismissible" role="alert">
+        {{ __('model.disposition.notice_me', ['reference_number' => $letter->reference_number]) }} <a href="{{ route('transaction.outgoing.show', $letter) }}" class="fw-bold">{{ __('menu.general.view') }}</a>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div> --}}
     @foreach($data as $disposition)
         <x-disposition-card
             :letter="$letter"

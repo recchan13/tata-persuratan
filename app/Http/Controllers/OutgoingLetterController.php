@@ -33,7 +33,8 @@ class OutgoingLetterController extends Controller
             $data->user(auth()->user()->id);
         }
         return view('pages.transaction.outgoing.index', [
-            'data' => Letter::outgoing()->render($request->search),
+            // 'data' => Letter::outgoing()->render($request->search),
+            'data' => $data->render($request->search),
             'search' => $request->search,
         ]);
     }
@@ -103,8 +104,8 @@ class OutgoingLetterController extends Controller
             if ($request->type != LetterType::OUTGOING->type()) throw new \Exception(__('menu.transaction.outgoing_letter'));
             $newLetter = $request->validated();
             $newLetter['user_id'] = $user->id;
-            $letter = Letter::create($newLetter);
 
+            $letter = Letter::create($newLetter);
             if ($request->hasFile('attachments')) {
                 foreach ($request->attachments as $attachment) {
                     $extension = $attachment->getClientOriginalExtension();
