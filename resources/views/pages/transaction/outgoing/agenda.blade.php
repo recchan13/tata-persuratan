@@ -25,6 +25,8 @@
                                 <option
                                     value="letter_date" @selected(old('filter', $filter) == 'letter_date')>{{ __('model.letter.letter_date') }}</option>
                                 <option
+                                    value="received_date" @selected(old('filter', $filter) == 'received_date')>{{ __('model.letter.received_date') }}</option>
+                                <option
                                     value="created_at" @selected(old('filter', $filter) == 'created_at')>{{ __('model.general.created_at') }}</option>
                             </select>
                         </div>
@@ -55,7 +57,7 @@
                 <tr>
                     <th>{{ __('model.letter.agenda_number') }}</th>
                     <th>{{ __('model.letter.reference_number') }}</th>
-                    <th>{{ __('model.letter.to') }}</th>
+                    <th>{{ __('model.letter.from') }}</th>
                     <th>{{ __('model.letter.letter_date') }}</th>
                 </tr>
                 </thead>
@@ -68,7 +70,7 @@
                             <td>
                                 <a href="{{ route('transaction.outgoing.show', $agenda) }}">{{ $agenda->reference_number }}</a>
                             </td>
-                            <td>{{ $agenda->to }}</td>
+                            <td>{{ $agenda->from }}</td>
                             <td>{{ $agenda->formatted_letter_date }}</td>
                         </tr>
                     @endforeach
@@ -86,7 +88,7 @@
                 <tr>
                     <th>{{ __('model.letter.agenda_number') }}</th>
                     <th>{{ __('model.letter.reference_number') }}</th>
-                    <th>{{ __('model.letter.to') }}</th>
+                    <th>{{ __('model.letter.from') }}</th>
                     <th>{{ __('model.letter.letter_date') }}</th>
                 </tr>
                 </tfoot>
