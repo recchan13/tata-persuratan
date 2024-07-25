@@ -8,7 +8,7 @@ return [
         'reference_number' => 'Nomor Surat',
         'letter_date' => 'Tanggal Surat',
         'received_date' => 'Tanggal Diterima',
-        'description' => 'Ringkasan',
+        'description' => 'JRA (Jadwal Retensi Arsip)',
         'note' => 'Keterangan',
         'dispose' => 'Disposisi Surat',
         'attachment' => 'Lampiran',

@@ -8,7 +8,7 @@ return [
         'reference_number' => 'Reference Number',
         'letter_date' => 'Letter Date',
         'received_date' => 'Received Date',
-        'description' => 'Brief Contents',
+        'description' => 'JRA (Jadwal Retensi Arsip)',
         'note' => 'Note',
         'dispose' => 'Dispose',
         'attachment' => 'Attachment',

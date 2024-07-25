@@ -65,7 +65,10 @@ class Letter extends Model
     }
 
     public function scopeUser($query, $user_id) {
-        return $query->where('user_id', $user_id);
+        // return $query->where('user_id', $user_id);
+        return $query->where('user_id', $user_id)
+                    ->orwhere('disposition_user_id', $user_id);
+
     }
 
     public function scopeType($query, LetterType $type)
@@ -77,7 +80,7 @@ class Letter extends Model
     {
         return $this->scopeType($query, LetterType::INCOMING);
     }
-    
+
     public function scopeBacktrack($query)
     {
         return $this->scopeType($query, LetterType::BACKTRACK);

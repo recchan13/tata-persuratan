@@ -18,7 +18,18 @@
                     <x-input-form name="reference_number" :label="__('model.letter.reference_number')"/>
                 </div>
                 <div class="col-sm-12 col-12 col-md-6 col-lg-4">
-                    <x-input-form name="from" :label="__('model.letter.from')"/>
+                    {{-- <x-input-form name="from" :label="__('model.letter.from')"/> --}}
+                    <label for="from"
+                        class="form-label">{{ __('model.letter.from') }}</label>
+                        <select class="form-select" id="from" name="from">
+                            @foreach($users as $user)
+                                <option
+                                    value="{{ $user->name }}"
+                                    @selected(old('from') == $user->name)>
+                                    {{ $user->name}}
+                                </option>
+                            @endforeach
+                        </select>
                 </div>
                 <div class="col-sm-12 col-12 col-md-6 col-lg-4">
                     <x-input-form name="agenda_number" :label="__('model.letter.agenda_number')"/>
