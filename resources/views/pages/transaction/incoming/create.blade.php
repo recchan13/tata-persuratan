@@ -58,7 +58,7 @@
                 <div class="col-sm-12 col-12 col-md-12 col-lg-12">
                     <x-input-textarea-form name="description" :label="__('model.letter.description')"/>
                 </div>
-                <div class="col-sm-12 col-12 col-md-6 col-lg-4">
+                <div class="col-sm-12 col-12 col-md-6 col-lg-6">
                     <div class="mb-3">
                         <label for="classification_code"
                                class="form-label">{{ __('model.letter.classification_code') }}</label>
@@ -73,15 +73,30 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-sm-12 col-12 col-md-6 col-lg-4">
-                    <x-input-form name="note" :label="__('model.letter.note')"/>
+                <div class="col-sm-12 col-12 col-md-6 col-lg-6">
+                    <div class="mb-3">
+                        <label for="signer_code"
+                               class="form-label">{{ __('model.letter.signer_code') }}</label>
+                        <select class="form-select" id="signer_code" name="signer_code">
+                            @foreach($signers as $signer)
+                                <option
+                                    value="{{ $signer->code }}"
+                                    @selected(old('signer_code') == $signer->code)>
+                                    {{ $signer->code }} - {{ $signer->name }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
                 </div>
-                <div class="col-sm-12 col-12 col-md-6 col-lg-4">
+                <div class="col-sm-12 col-12 col-md-6 col-lg-6">
                     <div class="mb-3">
                         <label for="attachments" class="form-label">{{ __('model.letter.attachment') }}</label>
                         <input type="file" class="form-control @error('attachments') is-invalid @enderror" id="attachments" name="attachments[]" multiple/>
                         <span class="error invalid-feedback">{{ $errors->first('attachments') }}</span>
                     </div>
+                </div>
+                <div class="col-sm-12 col-12 col-md-6 col-lg-6">
+                    <x-input-form name="note" :label="__('model.letter.note')"/>
                 </div>
 
             </div>

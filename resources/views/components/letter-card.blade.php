@@ -2,7 +2,7 @@
     <div class="card-header pb-0">
         <div class="d-flex justify-content-between flex-column flex-sm-row">
             <div class="card-title">
-                <h5 class="text-nowrap mb-0 fw-bold">{{ $letter->reference_number }}</h5>
+                <h5 class="text-nowrap mb-0 fw-bold">{{ $letter->reference_number }}/Un.16/{{ $letter->signer?->code }}/{{ $letter->classification?->code }}/{{ $letter->letter_date->format('m') }}/{{ $letter->letter_date->format('Y') }}</h5>
                 <small class="text-black">
                     {{ $letter->type == 'incoming' ? $letter->from : $letter->to }} |
                     <span

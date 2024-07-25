@@ -29,6 +29,7 @@ class Letter extends Model
         'note',
         'type',
         'classification_code',
+        'signer_code',
         'user_id',
         'disposition_user_id',
     ];
@@ -148,6 +149,10 @@ class Letter extends Model
         return $this->belongsTo(Classification::class, 'classification_code', 'code');
     }
 
+    public function signer(): BelongsTo
+    {
+        return $this->belongsTo(Signer::class, 'signer_code', 'code');
+    }
     //  @return BelongsTo
     // public function disposition(): BelongsTo
     // {

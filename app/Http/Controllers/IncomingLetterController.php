@@ -8,6 +8,7 @@ use App\Http\Requests\StoreLetterRequest;
 use App\Http\Requests\UpdateLetterRequest;
 use App\Models\Attachment;
 use App\Models\Classification;
+use App\Models\Signer;
 use App\Models\Config;
 use App\Models\Letter;
 use App\Models\User;
@@ -86,6 +87,7 @@ class IncomingLetterController extends Controller
     {
         return view('pages.transaction.incoming.create', [
             'classifications' => Classification::all(),
+            'signers' => Signer::all(),
             'users'=> User::all(),
         ]);
     }
@@ -138,7 +140,7 @@ class IncomingLetterController extends Controller
     public function show(Letter $incoming): View
     {
         return view('pages.transaction.incoming.show', [
-            'data' => $incoming->load(['classification', 'user', 'attachments']),
+            'data' => $incoming->load(['classification', 'signer', 'user', 'attachments']),
         ]);
     }
 
@@ -153,6 +155,7 @@ class IncomingLetterController extends Controller
         return view('pages.transaction.incoming.edit', [
             'data' => $incoming,
             'classifications' => Classification::all(),
+            'signers' => Signer::all(),
             'users'=> User::all(),
         ]);
     }

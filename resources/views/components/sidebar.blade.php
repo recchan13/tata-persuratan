@@ -112,6 +112,11 @@
                             <div data-i18n="{{ __('menu.reference.status') }}">{{ __('menu.reference.status') }}</div>
                         </a>
                     </li>
+                    <li class="menu-item {{ \Illuminate\Support\Facades\Route::is('reference.signer.*') ? 'active' : '' }}">
+                        <a href="{{ route('reference.signer.index') }}" class="menu-link">
+                            <div data-i18n="{{ __('menu.reference.signer') }}">{{ __('menu.reference.signer') }}</div>
+                        </a>
+                    </li>
                 </ul>
             </li>
             <!-- User Management -->

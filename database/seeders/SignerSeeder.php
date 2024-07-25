@@ -19,7 +19,7 @@ class SignerSeeder extends Seeder
         Signer::create([
             'code' => 'R',
             'name' => 'Rektor',
-            'description' => 'Unntuk Nomor surat',
+            'description' => 'UIN Raden Intan Lampung',
         ]);
     }
 }

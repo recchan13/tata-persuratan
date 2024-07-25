@@ -26,8 +26,8 @@
                     <select class="form-select" id="from" name="from">
                         @foreach($users as $user)
                             <option
-                                @selected(old('from', $data->from) == $user->id)
-                                value="{{ $user->id }}"
+                                @selected(old('from', $data->from) == $user->name)
+                                value="{{ $user->name }}"
                             >{{ $user->name }}</option>
                         @endforeach
                     </select>
@@ -52,7 +52,7 @@
                     <x-input-textarea-form :value="$data->description" name="description"
                                            :label="__('model.letter.description')"/>
                 </div>
-                <div class="col-sm-12 col-12 col-md-6 col-lg-4">
+                <div class="col-sm-12 col-12 col-md-6 col-lg-6">
                     <div class="mb-3">
                         <label for="classification_code"
                                class="form-label">{{ __('model.letter.classification_code') }}</label>
@@ -66,10 +66,21 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-sm-12 col-12 col-md-6 col-lg-4">
-                    <x-input-form :value="$data->note ?? ''" name="note" :label="__('model.letter.note')"/>
+                <div class="col-sm-12 col-12 col-md-6 col-lg-6">
+                    <div class="mb-3">
+                        <label for="signer_code"
+                               class="form-label">{{ __('model.letter.signer_code') }}</label>
+                        <select class="form-select" id="signer_code" name="signer_code">
+                            @foreach($signers as $signer)
+                                <option
+                                    @selected(old('signer_code', $data->signer_code) == $signer->code)
+                                    value="{{ $signer->code }}"
+                                >{{ $signer->code }} - {{ $signer->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
                 </div>
-                <div class="col-sm-12 col-12 col-md-6 col-lg-4">
+                <div class="col-sm-12 col-12 col-md-6 col-lg-6">
                     <div class="mb-3">
                         <label for="attachments" class="form-label">{{ __('model.letter.attachment') }}</label>
                         <input type="file" class="form-control @error('attachments') is-invalid @enderror"
@@ -89,6 +100,9 @@
                             </li>
                         @endforeach
                     </ul>
+                </div>
+                <div class="col-sm-12 col-12 col-md-6 col-lg-6">
+                    <x-input-form :value="$data->note ?? ''" name="note" :label="__('model.letter.note')"/>
                 </div>
             </div>
             <div class="card-footer pt-0">

@@ -19,6 +19,7 @@ return [
         ],
         'classification_code' => 'Kode Klasifikasi',
         'signer_code' => 'Kode Penandatangan',
+        'signer' => 'Penandatangan'
     ],
     'disposition' => [
         'to' => 'Penerima',
