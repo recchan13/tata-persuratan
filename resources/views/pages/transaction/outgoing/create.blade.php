@@ -5,6 +5,10 @@
         :values="[__('menu.transaction.menu'), __('menu.transaction.outgoing_letter'), __('menu.general.create')]">
     </x-breadcrumb>
 
+    @if($errors->any())
+        {{ implode('', $errors->all('<div>:message</div>')) }}
+    @endif
+
     <div class="card mb-4">
         <form action="{{ route('transaction.outgoing.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
@@ -13,15 +17,47 @@
                 <div class="col-sm-12 col-12 col-md-6 col-lg-4">
                     <x-input-form name="reference_number" :label="__('model.letter.reference_number')"/>
                 </div>
-                <div class="col-sm-12 col-12 col-md-6 col-lg-4">
+                {{-- <div class="col-sm-12 col-12 col-md-6 col-lg-4">
                     <x-input-form name="to" :label="__('model.letter.to')"/>
+                </div> --}}
+                <div class="col-sm-12 col-12 col-md-6 col-lg-4">
+                    {{-- <x-input-form name="from" :label="__('model.letter.from')"/> --}}
+                    <label for="from"
+                        class="form-label">{{ __('model.letter.from') }}</label>
+                        <select class="form-select" id="to" name="to">
+                            @foreach($users as $user)
+                                <option
+                                    value="{{ $user->name }}"
+                                    @selected(old('to') == $user->name)>
+                                    {{ $user->name}}
+                                </option>
+                            @endforeach
+                        </select>
                 </div>
                 <div class="col-sm-12 col-12 col-md-6 col-lg-4">
                     <x-input-form name="agenda_number" :label="__('model.letter.agenda_number')"/>
                 </div>
+                
+                <div class="col-sm-12 col-12 col-md-12 col-lg-12">
+                    <label for="disposition_user"
+                    class="form-label">PEMBERI DISPOSISI PERTAMA</label>
+                    <select class="form-select" id="disposition_user_id" name="disposition_user_id">
+                        @foreach($users as $user)
+                            <option
+                                value="{{ $user->id }}"
+                                @selected(old('disposition_user') == $user->id)>
+                                {{ $user->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+                
                 <div class="col-sm-12 col-12 col-md-6 col-lg-12">
                     <x-input-form name="letter_date" :label="__('model.letter.letter_date')" type="date"/>
                 </div>
+                {{-- <div class="col-sm-12 col-12 col-md-6 col-lg-6">
+                    <x-input-form name="received_date" :label="__('model.letter.received_date')" type="date"/>
+                </div> --}}
                 <div class="col-sm-12 col-12 col-md-12 col-lg-12">
                     <x-input-textarea-form name="description" :label="__('model.letter.description')"/>
                 </div>
@@ -33,7 +69,7 @@
                                 <option
                                     value="{{ $classification->code }}"
                                     @selected(old('classification_code') == $classification->code)>
-                                    {{ $classification->type }}
+                                    {{ $classification->code }} - {{ $classification->type }}
                                 </option>
                             @endforeach
                         </select>

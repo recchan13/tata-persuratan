@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Enums\LetterType;
+use App\Enums\Role;
 use App\Http\Requests\StoreLetterRequest;
 use App\Http\Requests\UpdateLetterRequest;
 use App\Models\Attachment;
 use App\Models\Classification;
 use App\Models\Config;
 use App\Models\Letter;
+use App\Models\User;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -24,6 +27,11 @@ class OutgoingLetterController extends Controller
      */
     public function index(Request $request): View
     {
+        $data = Letter::outgoing();
+
+        if (auth()->user()->role == Role::STAFF->status()) {
+            $data->user(auth()->user()->id);
+        }
         return view('pages.transaction.outgoing.index', [
             'data' => Letter::outgoing()->render($request->search),
             'search' => $request->search,
@@ -77,6 +85,7 @@ class OutgoingLetterController extends Controller
     {
         return view('pages.transaction.outgoing.create', [
             'classifications' => Classification::all(),
+            'users'=> User::all(),
         ]);
     }
 
@@ -95,6 +104,7 @@ class OutgoingLetterController extends Controller
             $newLetter = $request->validated();
             $newLetter['user_id'] = $user->id;
             $letter = Letter::create($newLetter);
+
             if ($request->hasFile('attachments')) {
                 foreach ($request->attachments as $attachment) {
                     $extension = $attachment->getClientOriginalExtension();
@@ -142,6 +152,7 @@ class OutgoingLetterController extends Controller
         return view('pages.transaction.outgoing.edit', [
             'data' => $outgoing,
             'classifications' => Classification::all(),
+            'users'=> User::all(),
         ]);
     }
 

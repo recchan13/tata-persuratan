@@ -37,7 +37,7 @@
 
                 <div class="col-sm-12 col-12 col-md-12 col-lg-12">
                     <label for="disposition_user"
-                    class="form-label">PENERIMA DISPOSISI</label>
+                    class="form-label">PEMBERI DISPOSISI PERTAMA</label>
                     <select class="form-select" id="disposition_user_id" name="disposition_user_id">
                         @foreach($users as $user)
                             <option
@@ -79,8 +79,7 @@
                 <div class="col-sm-12 col-12 col-md-6 col-lg-4">
                     <div class="mb-3">
                         <label for="attachments" class="form-label">{{ __('model.letter.attachment') }}</label>
-                        <input type="file" class="form-control @error('attachments') is-invalid @enderror" id="attachments"
-                               name="attachments[]" multiple/>
+                        <input type="file" class="form-control @error('attachments') is-invalid @enderror" id="attachments" name="attachments[]" multiple/>
                         <span class="error invalid-feedback">{{ $errors->first('attachments') }}</span>
                     </div>
                 </div>
