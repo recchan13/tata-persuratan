@@ -18,6 +18,7 @@ return [
             'not_disposed' => 'Belum Disposisi',
         ],
         'classification_code' => 'Kode Klasifikasi',
+        'signer_code' => 'Kode Penandatangan',
     ],
     'disposition' => [
         'to' => 'Penerima',
@@ -30,6 +31,11 @@ return [
     'classification' => [
         'code' => 'Kode',
         'type' => 'Klasifikasi',
+        'description' => 'Uraian',
+    ],
+    'signer' => [
+        'code' => 'Kode',
+        'name' => 'Nama',
         'description' => 'Uraian',
     ],
     'status' => [
