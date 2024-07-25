@@ -7,7 +7,7 @@
             $('#editModal form').attr('action', '{{ route('reference.signer.index') }}/' + id);
             $('#editModal input:hidden#id').val(id);
             $('#editModal input#code').val($(this).data('code'));
-            $('#editModal input#type').val($(this).data('name'));
+            $('#editModal input#name').val($(this).data('name'));
             $('#editModal input#description').val($(this).data('description'));
         });
     </script>
@@ -47,7 +47,7 @@
                                 <button class="btn btn-info btn-sm btn-edit"
                                         data-id="{{ $signer->id }}"
                                         data-code="{{ $signer->code }}"
-                                        data-type="{{ $signer->name }}"
+                                        data-name="{{ $signer->name }}"
                                         data-description="{{ $signer->description }}"
                                         data-bs-toggle="modal"
                                         data-bs-target="#editModal">
@@ -102,7 +102,7 @@
                 </div>
                 <div class="modal-body">
                     <x-input-form name="code" :label="__('model.signer.code')"/>
-                    <x-input-form name="type" :label="__('model.signer.name')"/>
+                    <x-input-form name="name" :label="__('model.signer.name')"/>
                     <x-input-form name="description" :label="__('model.signer.description')"/>
                 </div>
                 <div class="modal-footer">
@@ -133,7 +133,7 @@
                 <div class="modal-body">
                     <input type="hidden" name="id" id="id" value="">
                     <x-input-form name="code" :label="__('model.signer.code')"/>
-                    <x-input-form name="type" :label="__('model.signer.name')"/>
+                    <x-input-form name="name" :label="__('model.signer.name')"/>
                     <x-input-form name="description" :label="__('model.signer.description')"/>
                 </div>
                 <div class="modal-footer">

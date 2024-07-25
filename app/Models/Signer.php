@@ -20,7 +20,7 @@ class Signer extends Model
     {
         return $query->when($search, function($query, $find) {
             return $query
-                ->where('type', 'LIKE', $find . '%')
+                ->where('name', 'LIKE', $find . '%')
                 ->orWhere('code', $find);
         });
     }

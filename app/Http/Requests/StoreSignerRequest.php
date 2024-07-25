@@ -21,7 +21,7 @@ class StoreSignerRequest extends FormRequest
     {
         return [
             'code' => __('model.signer.code'),
-            'name' => __('model.signer.type'),
+            'name' => __('model.signer.name'),
             'description' => __('model.signer.description'),
         ];
     }

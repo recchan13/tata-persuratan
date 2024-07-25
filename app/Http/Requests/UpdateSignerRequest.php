@@ -35,7 +35,7 @@ class UpdateSignerRequest extends FormRequest
     {
         return [
             'code' => ['required', Rule::unique('signers')->ignore($this->id)],
-            'type' => ['required'],
+            'name' => ['required'],
             'description'=> ['nullable'],
         ];
     }
